@@ -1,0 +1,26 @@
+sudo docker run -it -d ubuntu:latest bash 	// latest ubuntu
+
+sudo docker ps					// to get container id
+
+sudo docker exec -it 2f bash                  // execute container as interactive 
+
+apt-get update					// update inside container
+
+apt-get install curl                          // curl install inside container
+
+exit
+
+sudo docker ps					// get container id
+
+sudo docker commit 2f ubuntu-curl             // new container with ubuntu & curl  
+
+sudo docker run -it -d ubuntu-curl sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'  // run container with curl
+  
+sudo docker ps					// get id of new container
+ 
+sudo docker logs -f fb				// open logs, gives output "Input website"
+
+sudo docker attach fb                         // attach in new terminal, here write helsinki.fi --> gives the curl output in both terminals  
+
+
+
