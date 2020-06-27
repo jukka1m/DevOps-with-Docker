@@ -1,0 +1,14 @@
+#pull the image 
+
+sudo docker pull devopsdockeruh/first_volume_exercise
+
+#create file for logs in working directory
+
+touch logs.txt
+
+#bind and start the program
+
+sudo docker run -d --mount type=bind, source="$(pwd)"/logs.txt, target=/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+
+
+
