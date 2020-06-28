@@ -1,0 +1,6 @@
+
+#ubuntu, curl and node already installed on image called node
+
+sudo docker build -t conn .
+
+sudo docker run -p 5000:5000 conn
